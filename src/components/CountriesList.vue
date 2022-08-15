@@ -1,15 +1,22 @@
 <template>
   <h1>Country List</h1>
-  <h1 v-for="(country, index) in countries" :key="index">
-    {{ country.name.common }}
-  </h1>
   <!-- wrapper div de bootstrap -->
   <div class="container">
     <!-- row wrapper div de bootstrap -->
     <div class="row">
       <div class="col-5">
         <div class="list-group">
-          <router-link to="" class="list-group-item list-group-item-action"></router-link>
+          <router-link
+            v-for="(country, index) in countries"
+            :key="index"
+            to=""
+            class="list-group-item list-group-item-action"
+          >
+          <img :src="`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`" alt="">
+            <p>
+              {{ country.name.common }}
+            </p>
+          </router-link>
         </div>
       </div>
     </div>
