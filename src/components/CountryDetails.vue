@@ -21,7 +21,7 @@
         <td>
           <ul>
             <li v-for="(border, index) in borders" :key="index">
-              {{ border }}
+              {{ borders }}
             </li>
           </ul>
         </td>
@@ -44,6 +44,9 @@ export default {
   },
   methods: {
     async getCountryByAlphaCode() {
+	// console.log(this.$route);
+	// console.log(this.$route.params);
+	// console.log(this.$route.params.alpha3Code);
       this.alphacode = this.$route.params.alpha3Code;
       const response = await fetch(
         `https://ih-countries-api.herokuapp.com/countries/${this.alphacode}`
