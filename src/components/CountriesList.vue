@@ -9,18 +9,23 @@
           <router-link
             v-for="(country, index) in countries"
             :key="index"
-            to=""
-            class="list-group-item list-group-item-action"
+            :to="`/list/${country.alpha3Code}`"
+            class="list-group-item list-group-item-action d-flex flex-column justify-content-center"
           >
-          <img :src="`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`" alt="">
+          <img class="flag" :src="`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`" alt="">
             <p>
               {{ country.name.common }}
             </p>
           </router-link>
         </div>
       </div>
+      <div class="col-7">
+        <router-view />
+      </div>
     </div>
   </div>
+
+ 
 </template>
 
 <script>
@@ -50,4 +55,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.flag{
+  width: 100px;
+  height: 80px;
+}
+</style>
