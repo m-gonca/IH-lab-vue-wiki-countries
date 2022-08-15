@@ -1,5 +1,9 @@
 <template>
-  <img src="" alt="" />
+  <img
+    class="flag"
+    :src="`https://flagpedia.net/data/flags/icon/72x54/${alpha2Code.toLowerCase()}.png`"
+    alt=""
+  />
   <h1>{{ name }}</h1>
   <table>
     <thead></thead>
@@ -35,6 +39,7 @@ export default {
       alphacode: "",
       area: "",
       borders: [],
+	  alpha2Code: "",
     };
   },
   methods: {
@@ -49,6 +54,7 @@ export default {
       this.capital = finalResponse.capital[0];
       this.area = finalResponse.area;
       this.borders = finalResponse.borders;
+	  this.alpha2Code = finalResponse.alpha2Code;
     },
   },
   mounted() {
@@ -61,8 +67,8 @@ export default {
   },
   watch: {
     countryCode(newCountryCode) {
-		this.getCountryByAlphaCode();
-	},
+      this.getCountryByAlphaCode();
+    },
   },
 };
 </script>

@@ -46,6 +46,8 @@ export default {
       // console.log(finalResponse);//VERIFICAMOS MEDIANTES UNA LLAMADA A CONSOLA QUE RECIBIMOS LOS DATOS
       this.countries = finalResponse;
     },
+ 
+  
   },
   //usamos el created hook para hacer nuestra llamada inicial a nuestra base de datos.
   //no usamos async en este caso porque la asincronia la maneja la funcion fetchCountries. El hook created() solo se encarga de llamar la funcion fetchCountries
